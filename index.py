@@ -3,16 +3,18 @@ import pySerial
 import radar
 import schedule
 
-max_sensor_distance_cm = 60
+max_sensor_distance_cm = 120
 connected = False
 serial = None
 radar = radar.Radar(max_sensor_distance_cm)
-try:
-    serial = pySerial.PySerial()
-    connected = True
-except:
-    print("could not connect serial")
 
+for i in range(0, 20): 
+    try:
+        port = 'com' + str(i)
+        serial = pySerial.PySerial(port)
+        connected = True
+    except:
+        print("could not connect serial")
 
 def parse_msg(msg):
     if len(msg) == 0:

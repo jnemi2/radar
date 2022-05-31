@@ -2,9 +2,8 @@ import serial
 
 
 class PySerial:
-    def __init__(self, timeout=1):
-        self.ser = serial.Serial('com9', 9600, timeout=timeout)
-        print("serial connected")
+    def __init__(self, port='com3', timeout=1):
+        self.ser = serial.Serial(port, 9600, timeout=timeout)
 
     def read_line(self):
         line = self.ser.readline().decode('utf-8').replace("\r\n", "")

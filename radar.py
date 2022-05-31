@@ -6,11 +6,11 @@ import schedule
 
 class Radar:
     def __init__(self, sensor_max_distance_cm):
-        self.W = 1000
+        self.W = 1200
         H = self.W
         margin = 20
         radar_window = "Radar"
-        self.dimensions = self.W, H, 3
+        self.dimensions = self.W //2 + 10, H, 3
         self.image = np.zeros(self.dimensions, dtype=np.uint8)
         self.center = self.W // 2
         self.center_coord = (self.center, self.center)

@@ -26,7 +26,7 @@ class Canvas:
 
     def update_canvas(self):
         # Grid
-        gray = (50, 50, 50)
+        gray = (25, 25, 25)
         for coord in range(0, self.W, grid_step):
             self.gen_line((0, coord), (self.W, coord), gray)
             self.gen_line((coord, 0), (coord, self.W), gray)
@@ -36,7 +36,7 @@ class Canvas:
         i = 0
         for distance_radius in range(0, self.radius, self.radius // stepcount):
             i += 10
-            self.gen_text(str(i) + "cm", (distance_radius + self.half + 10, self.half), 0, 0.7)
+            self.gen_text(str(i) + "cm", (distance_radius + self.half + 10, self.half), 0, 0.4)
             self.gen_circle(self.center, distance_radius)
         # Outer circle
         self.gen_circle(self.center, self.radius)
